@@ -1,0 +1,21 @@
+---
+interface Props {
+  title: string
+}
+const { title } = Astro.props
+---
+
+<div class='footer-list'>
+  <p class='footer-list-title'>{title}</p>
+  <ul>
+    <slot />
+  </ul>
+</div>
+
+<style is:global>
+  .footer-list-title {
+    padding-bottom: 1rem;
+    font-size: var(--p-small-fsz);
+    padding-bottom: var(--spacer5);
+  }
+</style>

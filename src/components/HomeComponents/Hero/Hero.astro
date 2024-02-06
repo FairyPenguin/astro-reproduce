@@ -1,0 +1,195 @@
+---
+//Imports
+import { Image } from 'astro:assets'
+
+import HeroImage from '@images/pexels-ovan-62689.jpg'
+import HeroImage2 from '@assets/images/DrawKit-Vector Illustration-Black Friday-Online Shopping.svg'
+import HeroImage3 from '@images/DrawKit-Vector-Illustration-ecommerce-07.svg'
+import HeroImage4 from '@images/pexels-ovan-62689.jpg'
+---
+
+{/*-------- Hero section Start --------*/}
+<section class='hero'>
+  {/* Action Buttons Side  */}
+
+  <div class='hero_actions'>
+    <!-- <h1 class="hero_main_title">X-tech Store</h1> -->
+
+    <h2 class='heading first-half'>Your one stop shop <br />for</h2>
+
+    <h2 class='heading second-half'>electronics...</h2>
+
+    <p class='description'>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis, velit
+      dignissimos architecto ad perferendis deleniti libero, eos esse vel.
+    </p>
+
+    <div class='btns_wrapper'>
+      <a class='blue_btn read-more' href='/about'>
+        <span>Read More</span>
+      </a>
+
+      <a class='purple_btn offers' href='#'>
+        <span>Offers!</span>
+      </a>
+    </div>
+  </div>
+
+  {/* Featured Image Side*/}
+
+  <div class='hero_featured_img'>
+    <Image
+      class='hero_img'
+      alt='hero image'
+      src={HeroImage2}
+      width={1000}
+      height={1000}
+    />
+  </div>
+</section>
+
+{/*-------- Hero section End --------*/}
+
+<style>
+  /* ------> HERO SECTION  */
+
+  .hero {
+    display: grid;
+    grid-template-columns: 53% auto;
+    margin-right: -3.8vw;
+    align-items: center;
+    overflow-x: hidden;
+    /* display:none */
+    /* margin-top: calc(-120px + 6.75rem); */
+    /* margin-bottom: calc(-120px + 6.75rem); */
+  }
+
+  .hero_actions {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-right: 1rem;
+  }
+
+  .heading {
+    font-size: clamp(2.6rem, 3.8vw, 3.6rem);
+    font-weight: 900;
+    text-transform: uppercase;
+    text-wrap: balance;
+    line-height: var(--heading-line-height);
+  }
+
+  .first-half {
+    background: var(--gradient-color-variant-45deg);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .second-half {
+    background: var(--gradient-color-variant-315deg);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .description {
+    color: var(--gray-700-color);
+    font-size: var(--p18-fsz);
+    width: clamp(35ch, 50%, 65ch);
+    line-height: var(--line-height-1-6);
+    padding-block: 1.75rem 2.5rem;
+    color: var(--gray-700-color);
+  }
+
+  .btns_wrapper {
+    display: flex;
+    gap: 2.5rem;
+  }
+
+  .hero a {
+    text-align: center;
+    /* ------> Responsive font size  */
+    font-size: 1.3rem;
+    /*  Responsive font size <------ */
+    font-weight: var(--p2-fw);
+    font-weight: bold;
+    border-radius: 2.8rem;
+    min-width: 9rem; /* to keep a min width for the btns */
+    border: 0;
+    cursor: pointer;
+    display: inline-block;
+    padding-inline: 2.25rem;
+    padding-block: 0.8rem;
+  }
+
+  .hero a:hover {
+    box-shadow: 0px 1px 50px 0px rgba(159, 4, 20, 0.75);
+    box-shadow: 0px 1px 50px 0px var(--secondry-color);
+  }
+
+  .purple_btn {
+    background: var(--primary-clr);
+    color: var(--white-clr);
+  }
+
+  .blue_btn {
+    background: rgb(0, 100, 230);
+    color: var(--white-clr);
+    color: #c2f6ff;
+  }
+
+  .blue_btn span {
+    text-decoration: underline;
+  }
+
+  .hero_featured_img {
+    margin-right: -55%;
+    overflow: hidden;
+  }
+
+  .hero_featured_img img {
+    max-width: 100%;
+    height: auto;
+    overflow: hidden;
+  }
+
+  /*  HERO SECTION <------ */
+
+  /* ------> HERO SECTION Media Queries  */
+
+  @media screen and (max-width: 768px) {
+    .hero {
+      grid-template-columns: 1fr;
+      margin-top: 0;
+      margin-bottom: 0;
+      padding-block: var(--section-padding-block);
+    }
+
+    .hero_featured_img {
+      display: none;
+    }
+  }
+
+  @media screen and (min-width: 320px) and (max-width: 480px) {
+    .hero a {
+      min-width: 16rem;
+    }
+
+    .heading {
+      font-size: calc(10px + 5vw);
+    }
+
+    .description {
+      width: 100%;
+    }
+
+    .btns_wrapper {
+      flex-direction: column;
+      align-items: center;
+      row-gap: 1.25rem;
+    }
+  }
+
+  /*  HERO SECTION Media Queries <------ */
+</style>

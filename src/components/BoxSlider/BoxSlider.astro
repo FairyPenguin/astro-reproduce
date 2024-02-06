@@ -1,0 +1,55 @@
+---
+import image1 from '@images/pexels-fox-2046807.jpg'
+import image2 from '@images/pexels-george-sistonen-7247777.jpg'
+import image3 from '@images/pexels-josh-sorenson-1334597.jpg'
+import image4 from '@images/pexels-junior-teixeira-2047905.jpg'
+import { BoxSlider, FadeSlider } from '@boxslider/slider'
+
+const options = {
+  autoScroll: true,
+  timeout: 5000
+}
+
+import { Image } from 'astro:assets'
+---
+
+<script>
+  const box = document.querySelector('#content-box')
+
+  // Create a fading slide transition that moves to the next slide every 5 seconds (5000ms)
+  const slider = new BoxSlider(box, new FadeSlider(), options)
+
+  // Call API methods on the slider to manipulate it see documentation for available actions
+  slider.next().then(() => {
+    // Promise resolves when the box has transitioned to the next slide
+  })
+</script>
+
+<section id='content-box'>
+  <!-- the content box -->
+  <figure>
+    <!-- slide one -->
+    <picture>
+      <!-- <source srcset="one-680.jpg" media="(min-width: 800px)" /> -->
+      <Image alt='5ara' src={image1} />
+    </picture>
+    <figcaption>This is slide one</figcaption>
+  </figure>
+  <figure>
+    <!-- slide two -->
+    <picture>
+      <!-- <source srcset="two-680.jpg" media="(min-width: 800px)" /> -->
+      <img src='two.jpg' />
+    </picture>
+    <figcaption>This is slide two</figcaption>
+  </figure>
+  <figure>
+    <!-- slide three -->
+    <picture>
+      <!-- <source srcset="three-680.jpg" media="(min-width: 800px)" /> -->
+      <img src='three.jpg' />
+      mage
+      <figcaption>This is slide three</figcaption>
+    </picture>
+  </figure>
+</section>

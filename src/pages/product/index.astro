@@ -1,0 +1,80 @@
+---
+import { Icon } from 'astro-icon/components'
+import MainLayout from '../../layouts/MainLayout.astro'
+import '../../styles/product/product.css'
+
+const stock = true
+const stockAvilabilty = stock ? 'In stock' : 'Out of stock'
+---
+
+<MainLayout title='single' description='single__product'>
+  <h1>Single Product Page</h1>
+
+  <section class='product__hero'>
+    {/* Images  */}
+    <div class='product__images'>
+      {/* Images-Grid  */}
+      <div class='images__grid'></div>
+    </div>
+    {/* Images-Grid  */}
+
+    <div class='product__info'>
+      <h2 class='product__name'>
+        iPhone 14 Pro Max 256GB Deep Purple 5G With FaceTime - Middle East
+        Version
+      </h2>
+      <span class='price'> <span class='currency'>EGP</span> 89999.00 </span>
+      <span class='stock'>
+        {stockAvilabilty}
+      </span>
+
+      <button class='add__to__cart__btn'>
+        <span>Add To Cart</span>
+        <Icon name='product/CartSvg' width={24} height={24} />
+        <Icon name='mark' />
+      </button>
+    </div>
+  </section>
+
+  <section class='product-description'>
+    <article>
+      <h3>Product Description</h3>
+      <p>
+        There’s nothing I really wanted to do in life that I wasn’t able to get
+        good at. That’s my skill. I’m not really specifically talented at
+        anything except for the ability to learn. That’s what I do. That’s what
+        I’m here for. Don’t be afraid to be wrong because you can’t learn
+        anything from a compliment.
+      </p>
+      <div class='benefits'>
+        <h4>Benefits</h4>
+        <ul>
+          <li>
+            Oil is a primary source of energy for various sectors, including
+            transportation, industries, and residential use.
+          </li>
+          <li>
+            Oil is highly versatile and used in the production of a wide range
+            of products. It serves as a raw material for manufacturing plastics
+          </li>
+          <li>
+            Oil is a crucial source of petrochemicals, which are used in the
+            production of plastics.
+          </li>
+          <li>
+            Oil is highly versatile and used in the production of a wide range
+            of products. It serves as a raw material for manufacturing plastics
+          </li>
+          <li>
+            Oil is a crucial source of petrochemicals, which are used in the
+            production of plastics.
+          </li>
+        </ul>
+      </div>
+    </article>
+  </section>
+
+  <section></section>
+
+  <section></section>
+</MainLayout>

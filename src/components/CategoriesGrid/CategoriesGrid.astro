@@ -1,0 +1,66 @@
+---
+import { Image } from 'astro:assets'
+import BackgroundImage from '../../assets/images/pexels-stas-knop-1298601.jpg'
+
+const backgroundImageUrl = BackgroundImage
+---
+
+<section>
+  <h2>Shop by category</h2>
+  <a href=''>Browse all categories</a>
+
+  <div class='background-image'>
+    <div class='category'>
+      <h3>Games Consols</h3>
+      <a href=''>
+        <Image alt='background-image' src={BackgroundImage} />
+      </a>
+      <span>See products</span>
+    </div>
+    <div class='category'>
+      <h3>Game Console</h3>
+      <a href=''>
+        <Image alt='background-image' src={BackgroundImage} />
+      </a>
+      <span>See products</span>
+    </div>
+    <div class='category'>
+      <h3>Games Consols</h3>
+      <a href=''>
+        <Image alt='background-image' src={BackgroundImage} />
+      </a>
+      <span>See products</span>
+    </div>
+  </div>
+
+  <section class='featured'></section>
+</section>
+
+<style>
+  .category {
+    color: white;
+    background: var(--gradient-color-variant-315deg);
+    padding-inline: 0.6rem;
+    padding-block: 0.6rem;
+    /* background-color: midnightblue; */
+
+    /* width: 250px;
+    height: 250px; */
+  }
+
+  .background-image {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    /* grid-template-columns: auto auto auto; */
+    /* grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); */
+    gap: 1rem;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .category img {
+    max-width: 100%;
+    height: auto;
+    padding-bottom: 0.6rem;
+  }
+</style>

@@ -1,0 +1,106 @@
+---
+//Imports
+import { Image } from 'astro:assets'
+import ProductImage from '../../../assets/images/w1.avif'
+import ProductImage2 from '../../../assets/images/w2.avif'
+import ProductImage3 from '../../../assets/images/w3.avif'
+
+//Props
+// interface Props {
+//   title: string;
+// }
+---
+
+<div class='product-card'>
+  <a href=''>
+    <div class='images-wrapper'>
+      <Image
+        class='first-image product-image'
+        src={ProductImage3}
+        alt='product-image'
+      />
+      <Image
+        class='second-image product-image'
+        src={ProductImage2}
+        alt='product-image'
+      />
+    </div>
+
+    <a href=''>
+      <span class='product-title'>
+        HAVIT H2019U RGB Surround Sound Gaming Headset USB - Blue
+      </span>
+    </a>
+    <span class='product-price'>EGP 399</span>
+    <span class='discount-price'>EGP 399</span>
+  </a>
+</div>
+
+<style>
+  .category-products-list {
+    margin-bottom: 100px;
+  }
+
+  .products-grid {
+    display: grid;
+    grid-template-columns: repeat(1, minmax(200px, 1fr));
+    gap: 1rem;
+    justify-content: center;
+  }
+
+  .product-card {
+    /* display: flex;
+      flex-direction: column; */
+    max-width: 220px;
+    max-height: 440px;
+    height: 410px;
+    background-color: var(--white-clr);
+    padding-inline: 0.8rem;
+    padding-block: 0.6rem;
+    border-radius: 0.25rem;
+    gap: 1rem;
+    border: 1px solid var(--gray-400-color);
+    box-shadow: 0 0.125rem 5px -0.0625rem #0c1a241a;
+  }
+
+  .images-wrapper {
+    width: 100%;
+    height: 255px;
+    overflow: hidden;
+    position: relative;
+    margin-bottom: 1.1rem;
+  }
+
+  .images-wrapper:hover .second-image {
+    z-index: 2;
+  }
+
+  .first-image {
+    z-index: 1;
+  }
+
+  .product-image {
+    object-fit: contain;
+    max-width: 100%;
+    height: auto;
+    padding-bottom: 1.1rem;
+    position: absolute;
+  }
+
+  .product-title {
+    padding-bottom: 0.8rem;
+    display: block;
+    /* color: var(--gray-900-color); */
+    font-weight: 400;
+  }
+
+  .product-price {
+    font-weight: 600;
+    font-size: 1.2rem;
+  }
+  /* 
+    .brand-name {
+      padding-bottom: 1rem;
+      display: block;
+    } */
+</style>

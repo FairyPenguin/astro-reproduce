@@ -1,0 +1,126 @@
+---
+// Components Imports
+import FooterList from '../Footer/components/FooterList.astro'
+import FooterListItem from '../Footer/components/FooterListItem.astro'
+---
+
+<footer class='footer'>
+  <div class='top-footer-container'>
+    <div class='footer-about footer-list'>
+      <p class='footer-list-title'>X-tech</p>
+      <p class='short-about'>
+        X-tech Company was established in 2020, and since then we have been
+        working on selecting high quality, guaranteed and approved products,
+        providing them to the customer at competitive prices and providing
+        after-sales services to achieve the highest levels of satisfaction for
+        our customers.
+      </p>
+    </div>
+
+    <FooterList title='About Us'>
+      <FooterListItem title='Our Stores' url='/products' />
+      <FooterListItem title='Careers' url='/products' />
+      <!-- <FooterListItem title="" url="/products" /> -->
+      <FooterListItem title='Terms & Conditions' url='/products' />
+      <FooterListItem title='Privacy Policy' url='/products' />
+    </FooterList>
+
+    <FooterList title='Customer Care'>
+      <FooterListItem title='Help Center' url='/products' />
+      <FooterListItem title='Track Your Order' url='/products' />
+      <FooterListItem title='Return & Refunds' url='/products' />
+      <FooterListItem title='' url='/products' />
+      <!-- <FooterListItem title="Link" url="/products" /> -->
+    </FooterList>
+
+    <FooterList title='Contact Us'>
+      <FooterListItem
+        title='Address: 70 Smouha Square, Alexandria, Egypt'
+        url='/products'
+      />
+      <FooterListItem title='Address2: Cairo, Egypt' url='/products' />
+      <FooterListItem title='Email: xtech.help@gmail.com' url='/products' />
+      <FooterListItem title='Phone: +1 1123 456 780' url='/products' />
+      <FooterListItem title='WhatsApp: +1 1123 456 780' url='/products' />
+    </FooterList>
+  </div>
+
+  <div class='bottom-footer'>
+    <div class='bottom-footer-wrapper'>
+      <p class='copyright'>
+        X-tech 2021 All Rights Reserved. Designed by ApexNile
+      </p>
+      <div class='social-icons'>
+        <ul>
+          <li></li>
+          <li></li>
+          <li></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<style>
+  /* =========== Styles Start =========== */
+
+  .footer {
+    background-color: var(--black-clr);
+    color: var(--white-clr);
+    margin-top: var(--section-padding-top);
+    padding-top: var(--section-padding-top);
+  }
+
+  .top-footer-container {
+    padding-inline: var(--spacer6);
+    padding-block: var(--spacer3);
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    justify-items: center;
+    row-gap: 1.5rem;
+    column-gap: 1rem;
+  }
+
+  /* .footer-about h3 {
+   
+  } */
+
+  .short-about {
+    line-height: var(--line-height-1-6);
+    color: var(--gray-500-color);
+    width: clamp(35ch, 50%, 65ch);
+  }
+
+  .bottom-footer {
+    background-color: var(--gray-700-color);
+    padding-inline: var(--spacer11);
+    padding-block: var(--spacer3);
+  }
+
+  /* =========== Styles End =========== */
+
+  /* =========== Media Queries Start =========== */
+
+  @media screen and (max-width: 1280px) {
+    .top-footer-container {
+      grid-template-columns: repeat(2, 50%);
+      justify-items: flex-start;
+    }
+    .footer-about p {
+      width: clamp(30ch, 50%, 45ch);
+    }
+  }
+
+  @media screen and (max-width: 678px) {
+    .top-footer-container {
+      grid-template-columns: repeat(1, 100%);
+    }
+
+    .footer-about p {
+      width: 100%;
+      /* max-width: 50%; */
+    }
+  }
+
+  /* =========== Media Queries End =========== */
+</style>

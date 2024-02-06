@@ -1,0 +1,138 @@
+---
+// Imports
+import MainLayout from "@layouts/MainLayout.astro";
+import Features from "@components/UiComponents/Features/Features.astro";
+import SmallFeatureCard from "@components/UiComponents/SmallFeatureCard/SmallFeatureCard.astro";
+
+import FeatureCard from "@components/UiComponents/FeatureCard/FeatureCard.astro";
+
+import about1 from "../../assets/images/pexels-fox-2046807.jpg?url";
+import about2 from "../../assets/images/pexels-george-sistonen-7247777.jpg";
+import about3 from "../../assets/images/pexels-maddy-freddie-4602445.jpg";
+import about4 from "../../assets/images/pexels-junior-teixeira-2047905.jpg";
+// Import Icons
+import { Icon } from "astro-icon/components";
+import { Image } from "astro:assets";
+---
+
+<MainLayout title="About" description="X-tech E-commerce">
+  <section class="hero">
+    <div class="hero-intro">
+      <h2 class="section-title">About us</h2>
+      <p>
+        At X-tech E-commerce, we are dedicated to providing our customers with
+        the best possible shopping experience. We believe that shopping should
+        be easy, convenient, and enjoyable, and we strive to make that a reality
+        for everyone who visits our site.
+      </p>
+    </div>
+
+    <div class="hero-image">
+    
+        <img src={about1} alt="shop" />
+
+    </div>
+  </section>
+
+
+{/* Features Cards */}
+  <Features
+    title="What we have to offer"
+    description="Society has put up so many boundaries, so many limitations on what's right and wrong that it's almost impossible to get a pure thought out."
+  >
+    <FeatureCard
+      title="Express shipping"
+      description="The time is now for it to be okay to be great. People in this world shun people for being great."
+      className="white-background"
+    >
+      <Icon name="features/ShippingSvg" color="white" width={30} height={30} />
+    </FeatureCard>
+
+    <FeatureCard
+      title="Free exchanges"
+      description="The time is now for it to be okay to be great. People in this world shun people for being great."
+      className="white-background"
+    >
+      <Icon name="features/WarrantySvg" color="white" width={30} height={30} />
+    </FeatureCard>
+    <FeatureCard
+      title="Extended warranty"
+      description="The time is now for it to be okay to be great. People in this world shun people for being great."
+      className="white-background"
+    >
+      <Icon name="features/ChatSvg" color="white" width={30} height={30} />
+    </FeatureCard>
+    
+  </Features>
+
+ 
+</MainLayout>
+
+<style>
+  section  {
+  padding-block: var(--section-padding-block);
+  }
+
+.section-title{
+  font-size: var(--h2-fsz-large);
+  line-height: var(--heading-line-height);
+  width: var(--heading-width);
+}
+
+  .hero-intro p
+ {
+  color: var(--gray-700-color);
+    padding-top: var(--p-padding-top);
+    font-size: var(--p-small-fsz);
+    padding-bottom: calc(var(--p-padding-bottom) + 0.75rem) ;
+    width: var(--p-large-width);
+    line-height: var(--line-height-1-6);
+  }
+
+  .hero {
+    display: grid;
+    grid-template-columns: repeat(2,49%);
+    justify-content: center;
+    max-width: 100%;
+    column-gap: 1rem;
+  }
+
+
+  .hero-image img {
+    border-radius: 0.75rem;
+    /* padding-inline: 0.4rem; */
+    object-fit: contain;
+    max-width: 100%;
+    height: auto;
+    /* display: none; */
+  }
+
+   {/* Media Queries */}
+
+  @media screen and (max-width: 867px) {
+    .hero {
+      grid-template-columns: 1fr;
+    }
+ 
+  }
+
+  @media screen and (min-width: 320px) and (max-width: 480px) {
+
+.section-title{
+  font-size: var(--h2-fsz-small);
+  font-size: calc(var(--h2-fsz-small) - 0.25rem);
+}
+
+  .hero-intro p
+ {  
+    width:  100%;
+    font-size: var(--p-small-fsz);
+    padding-bottom: 0 ;
+  }
+
+  .hero-image img{
+    display: none;
+  }
+
+  }
+</style>

@@ -1,0 +1,341 @@
+/* Global CSS Styles 
+######################
+File Sections by lines
+1- 12-20 ==>  font-face
+2-  ==>  root
+3-  ==>  Selects all elements
+4-  ==>  body
+5-  ==>  other elements
+###################### */
+
+/* Pages / Components Styles Guide:
+
+# The styling structure working like that:
+
+# First, the section general styles
+
+# Second, the section media queries
+
+# All Global-Variables are declared in global.css
+# under the ":root" element
+
+# Any Local Scoped Variablea are declared inside
+# the selector with description comments. 
+
+*/
+
+/* Font ==> English & Arabic Font ==> [Readex Pro] */
+@font-face {
+  font-family: Cairo;
+  src: url('/fonts/Cairo_Font/Cairo-VariableFont_slnt.ttf') format('truetype');
+  font-weight: 400 900; /* Specify the weight range supported by the variable font */
+  font-style: normal; /*  font style */
+  font-display: swap; /*  font display behavior (optional) */
+}
+
+/* ------> Start of Global CSS Selectors */
+
+/* ==> Root Styles ==> */
+:root {
+  /* Global Varibales */
+
+  /* Global Varibales Guide
+  # 
+  # fsz = font-size
+  # fw  = font-weight
+  # btn = button
+  # clr = color
+  # bkg = background
+  # p   = paragraph element
+  */
+
+  /* -----> Global Varibales  */
+
+  /* === -----------------| Colors Start|----------------- ===  */
+
+  /* === Main Colors Palette ===  */
+  --dark-clr: #1e293b;
+  --white-clr: #fff;
+  --black-clr: #000;
+  --primary-clr: #774dd3;
+  --secondery-clr: #64748b;
+  --info-color: #55a6f8;
+  --success-color: #67c23a;
+  --danger-color: #ea4e3d;
+  --warning-color: #f19937;
+
+  /* === Light Neutrals Colors Palette ===  */
+
+  --gray-100-color: #f9fafb;
+  --gray-200-color: #e9ecef;
+  --gray-300-color: #dde0e5;
+  --gray-400-color: #ced4da;
+  --gray-500-color: #adb5bd;
+  --gray-600-color: #6c757d;
+  --gray-700-color: #495057;
+  --gray-800-color: #343a40;
+  --gray-900-color: #212529;
+
+  /* === -----------------| Colors End |----------------- ===  */
+
+  /* === -----------------| Spaces Start |----------------- ===  */
+
+  --max-width: 1440px;
+  --main-width: 1240px;
+  --spacer1: 0.25rem;
+  --spacer2: 0.5rem;
+  --spacer3: 1rem;
+  --spacer4: 1.25rem;
+  --spacer5: 1.5rem;
+  --spacer6: 1.75rem;
+  --spacer7: 2rem;
+  --spacer8: 2.25rem;
+  --spacer9: 2.5rem;
+  --spacer10: 2.75rem;
+  --spacer11: 3rem;
+  --section-padding-block: calc(2rem + 2vw);
+  --section-padding-top: 1.5rem;
+  --section-padding-bottom: 1.5rem;
+  --section-padding-left: 1.5rem;
+  --section-padding-right: 1.5rem;
+
+  /* === -----------------| Spaces End |----------------- ===  */
+
+  --fw-500: 500;
+  --fw-600: 600;
+  --fw-700: 700;
+
+  /* Headings */
+
+  --title-small-fsz: calc(10px + 5vw);
+  --title-meduim-fsz: clamp(1.5rem, 5vw, 2rem);
+  --title-large-fsz: clamp(2.6rem, 3.8vw, 3.6rem);
+
+  /* h2 + 12px   => 48px */
+  --h1-fsz-large: calc(var(--h2-fsz-large) + 0.75rem);
+  /* => 40px */
+  --h1-fsz-small: calc(var(--h1-fsz-large) - 0.5rem);
+  /* h3 + 6px ==> 36px */
+  --h2-fsz-large: calc(var(--h3-fsz-large) + 0.375rem);
+  /* => 32px */
+  --h2-fsz-small: calc(var(--h2-fsz-large) - 0.25rem);
+  /* h4 + 6px ==> 30px */
+  --h3-fsz-large: calc(var(--h4-fsz-large) + 0.375rem);
+  /* => 28px */
+  --h3-fsz-small: calc(var(--h3-fsz-large) - 0.125rem);
+  /* h5 + 4px ==> 24px */
+  --h4-fsz-large: calc(var(--h5-fsz-large) + 0.25rem);
+  /* => 22px */
+  --h4-fsz-small: calc(var(--h4-fsz-large) - 0.125rem);
+  /* h6 + 4px ==> 20 */
+  --h5-fsz-large: calc(var(--h6-fsz-large) + 0.25rem);
+  /* => 18px */
+  --h5-fsz-small: calc(var(--h6-fsz-large) + 0.125rem);
+
+  --h6-fsz-large: 1rem;
+
+  --heading-width: fit-content;
+  --heading-line-height: calc(1em + 0.725rem);
+
+  /* Paragraphs */
+
+  --p18-fsz: 1.125rem;
+  --p16-fsz: 1rem;
+  --p-small-fsz: clamp(1.125rem, 2vw, 1.25rem);
+  --p-large-fsz: clamp(1.125rem, 4vw, 1.5rem);
+  --p-small-width: clamp(30ch, 50%, 45ch);
+  --p-large-width: clamp(35ch, 50%, 65ch);
+  --p-padding-top: 1.25rem;
+  --p-padding-bottom: 1.25rem;
+  /* Line Height */
+  --line-height-1-3: 1.3;
+  --line-height-1-6: 1.6;
+  /* Nav item */
+  --nav-item-fsz: 1.125rem;
+  --nav-item-fw: bold;
+  /* Border Radius */
+  --border-radius: 30px;
+  /* Buttons Colors */
+  --btn-border-radius: 28px;
+  --btn-red-clr: #9f0414;
+  --btn-blue-clr: #2f5a74;
+  --background-color: #1f1f1f;
+  --secondry-background-color: #e3eef4;
+  --p-color: #5b5f62; /* About Page Paragraphs color */
+
+  /* ------> The oppsite of the background-color */
+
+  --inverted-background-color: #fff;
+
+  /*  The oppsite of the background-color <----- */
+
+  /* ------> mobile-menu-backkgroud-color */
+
+  --mobile-menu-bkg-clr: hsla(213deg, 43%, 4%, 95%);
+
+  /* mobile-menu-backkgroud-color <------ */
+
+  --red-color: #9f0414;
+  --grey-color: #3c4856c2;
+  --secondry-color: #2d2f31;
+  --primary-color: #fff;
+  --pale-black-color: #2f2e2e;
+  --form-input-clr: #f3f6fc;
+
+  /* ------> Fixed text colors for light/dark theme 
+  same colors on both color-scheme
+  */
+
+  --light-text-clr: #fff;
+  --dark-text-clr: #000;
+
+  /* Fixed text colors for light/dark theme <------ 
+  same colors on both color-scheme
+  */
+
+  /*  Linear Gradient Colors*/
+  --gradient-color-red: linear-gradient(
+    336deg,
+    #da2c08 0%,
+    #e24e72 49.49%,
+    #395ab0 100%
+  );
+  --gradient-color-variant-315deg: conic-gradient(
+    from 315deg,
+    #774ed3,
+    #56a7f8
+  );
+  --gradient-color-variant-45deg: conic-gradient(from 45deg, #774ed3, #56a7f8);
+  --gradient-color-dark-radial: radial-gradient(
+    circle,
+    hsla(5deg, 28%, 72%, 100%) 13%,
+    hsla(127deg, 27%, 31%, 100%) 48%,
+    hsla(170deg, 27%, 56%, 100%) 92%
+  );
+
+  /*  Global Varibales <----- */
+}
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family:
+    'Cairo',
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    'Segoe UI',
+    Roboto,
+    Oxygen,
+    Ubuntu,
+    Cantarell,
+    'Open Sans',
+    'Helvetica Neue',
+    sans-serif;
+  background: var(--gray-200-color);
+  color: var(--text-color-light);
+  margin: 0 auto;
+  max-width: var(--max-width);
+  scroll-behavior: smooth;
+}
+
+/* :lang(ar) {
+  font-family: "Readex Pro", sans-serif;
+} */
+
+/* .main-container {
+  padding-top: 64px;
+  margin: 0px auto;
+} */
+
+/* ------------------------------------------------ */
+
+/* ===============================Global Styles=============================== */
+
+input,
+textarea,
+button {
+  font-family: inherit;
+}
+
+textarea {
+  resize: none;
+}
+
+/*------------------------------------*    #IMAGES
+  \*------------------------------------*/
+/**
+   * 1. Fluid images for responsive purposes.
+   * 2. Offset `alt` text from surrounding copy.
+   * 3. Setting `vertical-align` removes the whitespace that appears under `img`
+   *    elements when they are dropped into a page as-is. Safer alternative to
+   *    using `display: block;`.
+   */
+img {
+  max-width: 100%;
+  /* [1] */
+  font-style: italic;
+  /* [2] */
+  vertical-align: middle;
+  /* [3] */
+}
+
+/**
+     * 1. If a `width` and/or `height` attribute have been explicitly defined, let’s
+     *    not make the image fluid.
+     */
+img[width],
+img[height] {
+  /* [1] */
+  max-width: none;
+}
+
+li {
+  list-style: none;
+  line-height: 1.5em;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+/* section {
+  margin: 1.5rem;
+} */
+
+/* h1,
+  h2,
+  h3 {
+    padding: 8px 2px;
+  } */
+
+/* p {
+      line-height: 1.75rem;
+   } */
+
+/* Navbar mobile menu control class for 
+   open/close state */
+
+.nav-open {
+  overflow: hidden;
+  height: 100vh;
+}
+
+/*  END of Global CSS Selectors */

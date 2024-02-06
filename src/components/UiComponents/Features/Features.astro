@@ -1,0 +1,80 @@
+---
+// Props
+
+interface Props {
+  title?: string;
+  description?: string;
+  className?:string
+}
+
+const { title, description,className } = Astro.props;
+---
+
+<section class="features" >
+  <h2 class="section-title">{title}</h2>
+
+  <p class="section-description">
+    {description}
+  </p>
+
+  <div class={`features-grid ${className}`}>
+    {/* Cards */}
+
+    <slot />
+
+    {/* Cards */}
+  </div>
+</section>
+
+<style>
+.features{
+  padding-block: var(--section-padding-block);
+}
+
+  .features-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    justify-content: center;
+  }
+  
+
+  .justified-center{
+    justify-items: center;
+  }
+
+  .section-title {
+    font-size: var(--h2-fsz-large);
+    line-height: var(--heading-line-height);
+    width: var(--heading-width);
+    text-wrap: balance;
+  }
+
+  .section-description {
+    color: var(--gray-700-color);
+    padding-top: var(--p-padding-top);
+    font-size: var(--p-small-fsz);
+    padding-bottom: calc(var(--p-padding-bottom) + 0.75rem) ;
+    width: clamp(45ch, 50%, 75ch);
+    line-height: var(--line-height-1-6);
+  }
+
+     {/* Media Queries */}
+
+
+  @media screen and (max-width: 768px) {
+    .features-grid {
+      grid-template-columns: 1fr;
+      justify-items: center;
+    }
+     .section-description {
+      width: 100%;
+    }
+  }
+
+  @media screen and (min-width: 320px) and (max-width: 480px) {
+  .section-title{
+    font-size: calc(var(--h2-fsz-small) - 4px);
+  }
+  }
+</style>

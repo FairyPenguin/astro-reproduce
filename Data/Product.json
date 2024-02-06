@@ -1,0 +1,28 @@
+{
+  "id": "number |=> Req",
+  "name": "string |=> Req",
+  "category": "string |=> Req",
+  "subCategory": "string",
+  "brandName": "string |=> Req",
+  "modelNumber": "string |=> Req",
+  "price": "number |=> Req",
+  "discountPercentage": "number |=> Optional",
+  "inStock": "boolean |=> Req",
+  "productImages": {
+    "mainImage": "URL STRING |=> Req",
+    "otherImages": [
+      "URL STRING",
+      "URL STRING",
+      "URL STRING",
+      "URL STRING",
+      "|=> Req"
+    ]
+  },
+  "description": {
+    "overview": "string |=> optional",
+    "Highlights": ["STRING", "STRING", "STRING", "STRING", "|=> optional"],
+    "Specifications |=> optional": {
+      "key ": "string-value"
+    }
+  }
+}

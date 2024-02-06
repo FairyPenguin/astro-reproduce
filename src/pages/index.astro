@@ -1,0 +1,147 @@
+---
+// Imports
+import MainLayout from '../layouts/MainLayout.astro'
+import Stores from '../components/HomeComponents/Stores/Stores.astro'
+import CategoryProductsList from '@components/UiComponents/ProductsList/CategoryProductsList.astro'
+import Hero from '@components/HomeComponents/Hero/Hero.astro'
+import BoxSlider from '@components/BoxSlider/BoxSlider.astro'
+import Features from '@components/UiComponents/Features/Features.astro'
+import SmallFeatureCard from '@components/UiComponents/SmallFeatureCard/SmallFeatureCard.astro'
+import PlainCard from '@components/UiComponents/PlainCard/PlainCard.astro'
+import Navbar from '@components/UiComponents/Navbar/Navbar.astro'
+import CategoriesGrid from '@components/CategoriesGrid/CategoriesGrid.astro'
+import { type EmblaOptionsType } from 'embla-carousel'
+
+// Icons Imports
+import { Icon } from 'astro-icon/components'
+
+//Logos Imports
+import Noon from '@assets/images/noon-com-logo.png?url'
+import Jumia from '@assets/images/Jumia-Logo-500x281.png?url'
+import Amazon from '@assets/images/Amazon_logo.png?url'
+import NoonLogo from '@assets/images/Noon.png?url'
+import JumiaLogo from '@assets/images/Jumia.png?url'
+import AmazonLogo from '@assets/images/Amazon_logo_d.png?url'
+
+// React Components Imports
+import Slider from '@components/Slider/Slider'
+import Slider2 from '@components/Slider2/Slider2'
+import Collapsible from '@components/Ark/Ark'
+import Swiper2 from '@components/Swiper/Swiper'
+
+import ProductsSwiper from '../components/ProductsSwiper/ProductsSwiper'
+import ProductCard from '@/components/UiComponents/ProductCard/ProductCard.astro'
+import { Image } from 'astro:assets'
+import MobileNavMenu from '@/components/HomeComponents/MobileNavMenu/MobileNavMenu.astro'
+const OPTIONS: EmblaOptionsType = {}
+const SLIDE_COUNT = 4
+const SLIDES = Array.from(Array(SLIDE_COUNT).keys())
+---
+
+{/* Header */}
+
+{/* Navbar */}
+<!-- <Navbar /> -->
+
+{/* Slider */}
+<!-- <Slider client:load /> -->
+<!-- <Slider2 slides={SLIDES} options={OPTIONS} client:load /> -->
+<!-- <BoxSlider client:load /> -->
+<!-- <Collapsible client:load /> -->
+
+<MobileNavMenu />
+<MainLayout title='X-tech' description='X-tech'>
+  <Swiper2 slot='after-navigation' client:load />
+
+  <CategoriesGrid />
+
+  <CategoryProductsList title='New Arrivals' />
+
+  <ProductsSwiper client:load>
+    <h1 slot='solt1'>Ho HO</h1>
+    <h1 slot='solt2'>Pew Pew</h1>
+    <div slot='slot3'>
+      <ProductCard />
+    </div>
+  </ProductsSwiper>
+
+  <Hero />
+
+  {/* Stores */}
+  <Features
+    className='justified-center'
+    title='You can find us on'
+    description='X-tech products are also available on other stores'
+  >
+    {/* Cards */}
+    <PlainCard className='no-background'>
+      <a href=''>
+        <Image src={NoonLogo} alt='Altk' width={200} height={120} />
+      </a>
+    </PlainCard>
+
+    <PlainCard className='no-background'>
+      <a href=''>
+        <Image src={JumiaLogo} alt='Altk' width={200} height={120} />
+      </a>
+    </PlainCard>
+
+    <PlainCard className='no-background'>
+      <a href=''>
+        <Image src={AmazonLogo} alt='Altk' width={200} height={120} />
+      </a>
+    </PlainCard>
+    {/* Cards */}
+  </Features>
+
+  {/* Features */}
+
+  <Features
+    title='We build our business on customer service'
+    description='Our company provides exceptional customer service with a dedicated team ready to assist you with any questions or concerns. We offer prompt and courteous support for placing an order, tracking a shipment, or resolving any product issues. Contact us by phone, email, or live chat during regular business hours. Thank you for choosing us, and we look forward to providing you with a great customer experience.'
+  >
+    {/* Cards */}
+    <SmallFeatureCard
+      title='Exchange'
+      description='We want you to feel safe'
+      className='white-background'
+    >
+      <Icon name='features/ShippingSvg' color='white' width={30} height={30} />
+    </SmallFeatureCard>
+
+    <SmallFeatureCard
+      title='Fast Shipping'
+      description='Need it fast? No worries!'
+      className='white-background'
+    >
+      <Icon name='features/ShippingSvg' color='white' width={30} height={30} />
+    </SmallFeatureCard>
+
+    <SmallFeatureCard
+      title='Extended warranty'
+      description='We want you to feel safe'
+      className='white-background'
+    >
+      <Icon name='features/ShippingSvg' color='white' width={30} height={30} />
+    </SmallFeatureCard>
+    {/* Cards */}
+  </Features>
+</MainLayout>
+
+<style>
+  .image {
+    display: flex;
+    justify-content: center;
+    /* align-items: center; */
+    background-color: black;
+    width: 300px;
+    height: 300px;
+    object-fit: contain;
+    padding: 10px;
+  }
+
+  .image img {
+    max-width: 100%;
+    height: auto;
+  }
+</style>
